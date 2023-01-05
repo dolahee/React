@@ -9,4 +9,3 @@ const obj = {
 const copyObj = { ...obj, lupy: 'lupy' };
 console.log(obj);
 console.log(copyObj);
-//저장완료
