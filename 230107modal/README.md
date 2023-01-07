@@ -20,3 +20,54 @@ function App() {
   );
 }
 ```
+
+<h1>👍 props의 활용법 </h1>
+
+```jsx
+export default function MainHeader(props) {
+  return (
+    <div>
+      <h1>{props.userID} 님 반갑습니다!</h1>
+      <a href={props.href}> {props.text} </a>
+    </div>
+  );
+}
+
+// 인자
+export default function MainHeader({ text, href, userID }) {
+  return (
+    <div>
+      <h1>{userID} 님 반갑습니다!</h1>
+      <a href={href}> {text} </a>
+    </div>
+  );
+}
+//변수
+export default function MainHeader(props) {
+    const{text , href,userID} = props;
+  return (
+    <div>
+      <h1>{userID} 님 반갑습니다!</h1>
+      <a href={href}> {text} </a>
+    </div>
+  );
+}
+```
+
+<h1>☝️ClassProps 방법</h1>
+
+```jsx
+import React, { Component } from "react";
+
+export default class ClassProps extends Component {
+  render() {
+    const { text, href, userID } = this.props;
+    return (
+      <div>
+        <h1>{userID} 님 반갑습니다 ClassProps </h1>
+        <a href={href}> {text} </a>
+      </div>
+    );
+  }
+}
+```
