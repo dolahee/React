@@ -1,40 +1,44 @@
 import React, { useState } from "react";
 
 export default function Ex13() {
+  const [users, setUsers] = useState([
+    { name: "코디", coma: ":", email: "codi@gmail.com" },
+    { name: "윤소희", coma: ":", email: "codi@gmail.com" },
+  ]);
   const [name, setName] = useState("");
-  const [setme, setMe] = useState(":");
-  const [email, setEamil] = useState("");
-  const [inputValue, setInputValue] = useState("");
-  const [inputValue1, setInputValue2] = useState("");
-  const handleChange = (event) => {
-    setInputValue(event.target.value);
+  const [email, setEmail] = useState("");
+  const handleChangeName = (event) => {
+    setName(event.target.value);
+  };
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
   };
   const handleClick = (event) => {
-    setName(inputValue);
-    setEamil(inputValue1);
+    setUsers((prev) => {
+      const newUsers = [...prev];
+      newUsers.push({ name, email });
+      return newUsers;
+    });
   };
-  const handleChange2 = (event) => {
-    setInputValue2(event.target.value);
-  };
-  const resetName = () => {
-    setName("");
-    setEamil("");
-    setMe("");
-  };
+  const resetName = () => {};
   return (
     <div>
-      <input onChange={handleChange} />
-      <input onChange={handleChange2} />
+      <input placeholder="이름을 입력하세요" onChange={handleChangeName} />
+      <input placeholder="이메일을 입력하세요" onChange={handleChangeEmail} />
       <button onClick={handleClick}>등록</button>
-      <h1>
-        코디: codi@gmail.com <br />
-        윤소희: yoonsohee@gmail.com
-        <br />
-      </h1>
+
       <h1 onClick={resetName}>
-        {name}
-        {setme}
-        {email}
+        {users.map((el, index) => {
+          return (
+            <div key={index}>
+              <h5>
+                {el.name}
+                {el.coma}
+                {el.email}
+              </h5>
+            </div>
+          );
+        })}
       </h1>
     </div>
   );
