@@ -7,6 +7,7 @@ export default function TestRef() {
   const inputValue = useRef();
 
   function onChangeText() {
+    console.log(inputValue);
     setText(inputValue.current.value);
   }
   return (
