@@ -13,8 +13,6 @@ import Exconditional from "./componentrs/Exconditional";
 function App() {
   return (
     <div className="App">
-      <Exconditional />
-      <BrHr />
       <TestRef />
       <BrHr />
       <ChangeFocus />
@@ -30,6 +28,9 @@ function App() {
       <ReactFragment />
       <BrHr />
       <ConditionalRender />
+      <BrHr />
+      <Exconditional />
+      <BrHr />
     </div>
   );
 }
