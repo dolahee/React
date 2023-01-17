@@ -6,19 +6,21 @@ import TestStyled from "./components/TestStyled";
 import UseEffectFetch from "./components/UseEffectFetch";
 import Image from "./components/Image";
 import FancyBorder from "./components/FancyBorder";
+import Profile from "./components/Profile";
+import Board from "./components/Board";
+import { Route, Routes, Link } from "react-router-dom";
+import Header from "./components/Header";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
     <div className="App">
-      <FancyBorder color="orange">
-        <Image />
-      </FancyBorder>
-      <Image />
-      <StyledApp />
-      <TestStyled />
-      <TestCss />
-      <InlineCss />
-      <UseEffectFetch />
+      <Routes>
+        <Route path="/" element={<Header />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/board" element={<Board />}></Route>
+      </Routes>
     </div>
   );
 }
