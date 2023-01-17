@@ -5,10 +5,14 @@ import TestCss from "./components/TestCss";
 import TestStyled from "./components/TestStyled";
 import UseEffectFetch from "./components/UseEffectFetch";
 import Image from "./components/Image";
+import FancyBorder from "./components/FancyBorder";
 
 function App() {
   return (
     <div className="App">
+      <FancyBorder color="orange">
+        <Image />
+      </FancyBorder>
       <Image />
       <StyledApp />
       <TestStyled />
