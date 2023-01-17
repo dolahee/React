@@ -17,6 +17,7 @@ export default function UseEffectFetch() {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <div>
       {dataArr.map((el, index) => {
