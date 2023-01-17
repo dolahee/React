@@ -26,7 +26,7 @@ to {
 const MyLogo = styled.img`
   height: 40vmin;
   pointer-events: none;
-  animation: ${rotation} infinite 20s linear;
+  animation: ${rotation} infinite 10s linear;
 `;
 const MyA = styled.p`
   color: #61dafb;
